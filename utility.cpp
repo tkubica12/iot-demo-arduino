@@ -173,47 +173,47 @@ bool readMessage(int messageId, char *payload)
     accgyro_sensor->getXAxes(acce);
     accgyro_sensor->getGAxes(gyro);
     bool temperatureAlert = false;
-    // if(temperature != temperature)
-    // {
-    //     json_object_set_null(root_object, "temperature");
-    // }
-    // else
-    // {
-    //     json_object_set_number(root_object, "temperature", temperature);
-    //     if(temperature > TEMPERATURE_ALERT)
-    //     {
-    //         temperatureAlert = true;
-    //     }
-    // }
+    if(temperature != temperature)
+    {
+        json_object_set_null(root_object, "temperature");
+    }
+    else
+    {
+        json_object_set_number(root_object, "temperature", temperature);
+        if(temperature > TEMPERATURE_ALERT)
+        {
+            temperatureAlert = true;
+        }
+    }
 
-    // if(humidity != humidity)
-    // {
-    //     json_object_set_null(root_object, "humidity");
-    // }
-    // else
-    // {
-    //     json_object_set_number(root_object, "humidity", humidity);
-    // }
+    if(humidity != humidity)
+    {
+        json_object_set_null(root_object, "humidity");
+    }
+    else
+    {
+        json_object_set_number(root_object, "humidity", humidity);
+    }
 
-    // if(pressure != pressure)
-    // {
-    //     json_object_set_null(root_object, "pressure");
-    // }
-    // else
-    // {
-    //     json_object_set_number(root_object, "pressure", pressure);
-    // }
+    if(pressure != pressure)
+    {
+        json_object_set_null(root_object, "pressure");
+    }
+    else
+    {
+        json_object_set_number(root_object, "pressure", pressure);
+    }
 
-    // if(magneto != magneto)
-    // {
-    //     json_object_set_null(root_object, "magneto");
-    // }
-    // else
-    // {
-    //    json_object_dotset_number(root_object, "magneto.x", magneto[0]);
-    //    json_object_dotset_number(root_object, "magneto.y", magneto[1]);
-    //    json_object_dotset_number(root_object, "magneto.z", magneto[2]);
-    // }
+    if(magneto != magneto)
+    {
+        json_object_set_null(root_object, "magneto");
+    }
+    else
+    {
+       json_object_dotset_number(root_object, "magneto.x", magneto[0]);
+       json_object_dotset_number(root_object, "magneto.y", magneto[1]);
+       json_object_dotset_number(root_object, "magneto.z", magneto[2]);
+    }
     
     if(acce != acce)
     {

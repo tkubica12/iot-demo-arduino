@@ -52,9 +52,9 @@ Takto vypadá odesíláný JSON:
     "humidity": 76,
     "preassure": 986,
     "magneto: {
-            "x": -2,
-            "y": -105,
-            "z": 1011
+            "x": 135,
+            "y": -10,
+            "z": 187
     },
     "acce": {
         "now": {
@@ -63,8 +63,8 @@ Takto vypadá odesíláný JSON:
             "z": 1011
         },
         "avg": {
-            "x": -2,
-            "y": -105,
+            "x": -1,
+            "y": -108,
             "z": 1011
         },
         "max": {
