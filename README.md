@@ -26,15 +26,15 @@ Následně použijte kód z toho repozitáře pro rozšíření těchto funkcí 
 
 Po startu se zařízení připojí na nastavenou WiFi síť. Zobrazí IP adresu a informaci o běžícím odesílání. Každá odeslaná zpráva způsobí bliknutí modré diody nalevo od displeje.
 
-(https://github.com/tkubica12/iot-demo-arduino/blob/master/img/screen0.jpg?raw=true)
+![screen](https://github.com/tkubica12/iot-demo-arduino/blob/master/img/screen0.jpg?raw=true)
 
 Stisknutím tlačítka B můžete odesílání zastavit a opětovně zpustit.
 
-(https://github.com/tkubica12/iot-demo-arduino/blob/master/img/screen1.jpg?raw=true)
+![screen](/img/screen1.jpg?raw=true)
 
 Stisknutím tlačítka A se dostanete na druhou obrozovku, v které můžete změnit interval odesílání použitím tlačítka B.
 
-(https://github.com/tkubica12/iot-demo-arduino/blob/master/img/screen2.jpg?raw=true)
+![screen](https://github.com/tkubica12/iot-demo-arduino/blob/master/img/screen2.jpg?raw=true)
 
 
 
