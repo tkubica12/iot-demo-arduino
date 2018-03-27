@@ -28,7 +28,7 @@ Po startu se zařízení připojí na nastavenou WiFi síť. Zobrazí IP adresu 
 
 ![screen](/img/screen0.jpg)
 
-Stisknutím tlačítka B můžete odesílání zastavit a opětovně zpustit.
+Stisknutím tlačítka B můžete odesílání zastavit a opětovně spustit.
 
 ![screen](/img/screen1.jpg)
 
