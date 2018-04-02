@@ -13,7 +13,10 @@ static bool hasWifi = false;
 int messageCount = 1;
 static bool messageSending = true;
 static uint64_t send_interval_ms;
+static uint64_t messageTimer = 0;
 static int screenNumber = 0;
+static char receivedMessage[32];
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Utilities
@@ -46,7 +49,8 @@ static void SendConfirmationCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result)
 static void MessageCallback(const char* payLoad, int size)
 {
   blinkLED();
-  Screen.print(1, payLoad, true);
+  strcpy(receivedMessage, payLoad);
+  messageTimer = SystemTickCounterRead();
 }
 
 static void DeviceTwinCallback(DEVICE_TWIN_UPDATE_STATE updateState, const unsigned char *payLoad, int size)
@@ -64,6 +68,7 @@ static void DeviceTwinCallback(DEVICE_TWIN_UPDATE_STATE updateState, const unsig
 
 static int  DeviceMethodCallback(const char *methodName, const unsigned char *payload, int size, unsigned char **response, int *response_size)
 {
+  Serial.printf("Message method: %s", methodName);
   LogInfo("Try to invoke method %s", methodName);
   const char *responseMessage = "\"Successfully invoke device method\"";
   int result = 200;
@@ -248,7 +253,7 @@ void loop()
   if(IsButtonClicked(USER_BUTTON_A) && screenNumber == 1)
   {
       screenNumber = 2;
-      Screen.print(0, "Rozpoznani hlasu \r\n");
+      Screen.print(0, "Prijem zprav \r\n");
       Screen.print(1, " \r\n");
       Screen.print(2, " \r\n");
       Screen.print(3, " \r\n");
@@ -269,5 +274,15 @@ void loop()
       Screen.print(3, "> IoT Hub \r\n");
       delay(250);
   }
+
+  if(((int)(SystemTickCounterRead() - messageTimer) <= 5000) && screenNumber == 2) {
+    char messageBuff[32];
+    snprintf(messageBuff, 32, "%s\r\n", receivedMessage);
+    Screen.print(2, messageBuff);
+  }
+  if(((int)(SystemTickCounterRead() - messageTimer) > 5000) && screenNumber == 2) {
+    Screen.print(2, "  \r\n");
+  }
+
   delay(10);
 }

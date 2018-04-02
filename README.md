@@ -8,6 +8,7 @@ Příklad kódu pro Arduino IoT senzor demonstrující použití Azure IoT Hub a
 * Možnost zastavit a znovu spustit odesílání tlačítkem na zařízení
 * Agregace údajů z akcelerometru mimo odesílací cyklus (průměr a absolutní maximum za interval)
 * Možnost nastavit odesílací interval tlačítkem na zařízení
+* Zobrazení krátké cloud-to-device zprávy na displeji
 
 ## To Do
 * Voice Recognition (na tlačítko nahrát hlas a rozeznat mluvčího)
@@ -36,7 +37,7 @@ Stisknutím tlačítka A se dostanete na druhou obrazovku, v které můžete zm�
 
 ![screen](/img/screen2.jpg)
 
-
+Dalším stisknutím tlačítka A se dostanete na třetí obrazovku, která při příjmu cloud-to-device zprávy tuto zobrazí na displeji po dobu 5 vteřin.
 
 # Odesílaná datová struktura
 
