@@ -15,7 +15,7 @@ static bool messageSending = true;
 static uint64_t send_interval_ms;
 static uint64_t messageTimer = 0;
 static int screenNumber = 0;
-static char receivedMessage[32];
+static char receivedMessage[16];
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -276,8 +276,8 @@ void loop()
   }
 
   if(((int)(SystemTickCounterRead() - messageTimer) <= 5000) && screenNumber == 2) {
-    char messageBuff[32];
-    snprintf(messageBuff, 32, "%s\r\n", receivedMessage);
+    char messageBuff[16];
+    snprintf(messageBuff, 16, "%s\r\n", receivedMessage);
     Screen.print(2, messageBuff);
   }
   if(((int)(SystemTickCounterRead() - messageTimer) > 5000) && screenNumber == 2) {
